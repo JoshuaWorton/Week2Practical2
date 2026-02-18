@@ -30,7 +30,17 @@ The final objective is to create the layout shown below, but the process has bee
 ### Exercise 2.1: Create the content area 
 In the image of the final layout, notice that the content is contained in a central area with equal size margins on either side. Create this effect by changing the background colour of the body to a colour of your choosing. 
 
-HTML elements are transparent by default so you will be able to see your background colour behind the text. You will need to set the background colour of your content elements to white. The simplest way to do this is to add a `<div>` as the first child of the `<body>` element then put all the other content elements inside it. We haven’t seen `<div>` much yet because there have been better semantic choices in the examples so far. However, this is an appropriate time to use a `<div>` as the goal is to create a visual grouping without a particular meaning in terms of the content or structure of the page. 
+HTML elements are transparent by default so you will be able to see your background colour behind the text. You will need to set the background colour of your content elements to white. The simplest way to do this is to add a `<div>` as the first child of the `<body>` element then put all the other content elements inside it. e.g.:
+
+```
+<body>
+  <div>
+    <!-- page content goes in here -->
+  </div>
+</body>
+```
+
+"div" is short for division and it is a way to divide your content into areas or boxes for styling purposes. We haven’t seen `<div>` yet because there have been better semantic choices in the examples so far—always use a semantic element if it makes sense. However, this is an appropriate time to use a `<div>` as the goal is to create a visual grouping without a particular meaning in terms of the content or structure of the page. 
 
 Add CSS to give the `<div>` a white background and equal size left and right margins (use relative units!). It’s a good idea to give the `<div>` a unique ID for styling purposes, just in case you need to use more `<div>` elements elsewhere in the page. 
 
@@ -47,9 +57,9 @@ You’ve probably just encountered another CSS quirk: the `inline-block` whitesp
 ### Exercise 2.3: Style the main navigation
 Style the navigation items using the `inline-block` approach once again. The steps you need to take will be very similar to the example shown in the last lecture.
 
-Notice that, in the final layout, the items stretch across the full width of the line, with each item taking up 25% of the content area width. Your navigation should do the same. Also make your navigation items look more button-like using `background-color` and `padding` in the appropriate places. The button background should change colour when an item link is hovered.
+Notice that, in the final layout, the items stretch across the full width of the line, with each item taking up 25% of the content area width. Your navigation should do the same. Also make your navigation items look more button-like using `background-color` and `padding` in the appropriate places. The button background should change colour [when an item link is hovered](https://www.w3schools.com/cssref/sel_hover.php).
 
-Tip: In lecture, we made the navigation item background change colour on hover by adding a hover effect to the list item, rather than the link. This created the visual effect we wanted but had the drawback of giving users the impression that the item background is clickable when it isn’t. Try this alternative approach:
+Tip: You can make the navigation item background (not just the link) change colour on hover by adding a hover effect to the list item, rather than the link. This creats the visual effect we want but has the drawback of giving users the impression that the item background is clickable when it isn’t. Try this alternative approach:
 
 1. Set the navigation link’s `display` property to `block` (it is `inline` by default). This will cause the link to take up the full width of the list item.
 2. Set the navigation link’s `line-height` to be the desired full height of the list item (I used 2rem) and remove any `padding` from the list item. This makes the link take up the full height of the list item.
@@ -63,6 +73,8 @@ Write CSS to achieve this layout using any of the approaches covered in lecture.
 1. Set `float:left` on `<main>`. You will also need to add styling to `<footer>`.
 2. Alternatively, change the display property of `<main>` and `<aside>` to `inline-block`. If you find the `<aside>` is not aligned with the top of `<main>`, try setting the `vertical-align` property of `<aside>`.
 3. Another option is to use the `position` property. You will likely need to wrap `<main>` and `<aside>` in another `<div>` with its `position` property set.
+
+Don't worry if you don't get the perfect layout after tweaking lots of properties! The layout approaches covered next week make this much easier.
 
 ### Exercise 2.5: The Main News Story
 The main news story consists of the headline, content paragraphs including subheadings and an image with a caption. Make the image and caption float to the right of the story, with the subheading and its content wrapping the image.
